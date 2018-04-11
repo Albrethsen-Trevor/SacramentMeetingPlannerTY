@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using SacramentMeetingPlannerTY.Models;
+using SacramentMeetingPlannerTY.Data;
 
 namespace SacramentMeetingPlannerTY
 {
@@ -22,6 +25,9 @@ namespace SacramentMeetingPlannerTY
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            services.AddDbContext<SacramentMeetingPlannerContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("SacramentMeetingPlannerTYContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,3 +54,7 @@ namespace SacramentMeetingPlannerTY
         }
     }
 }
+
+/*
+    dotnet aspnet-codegenerator controller -name HymnController -m Hymns -dc SacramentMeetingPlannerContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
+*/
