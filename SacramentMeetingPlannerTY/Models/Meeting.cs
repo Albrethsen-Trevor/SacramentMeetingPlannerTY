@@ -1,31 +1,59 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 
 namespace SacramentMeetingPlannerTY.Models
 {
     public class Meeting
     {
-        public Meeting()
-        {
-            //Speaker = new HashSet<Speaker>();
-        }
-
-        public int MeetingId { get; set; }
+        public int ID { get; set; }
+        
+        [Display(Name = "Meeting Date")]
+        [DataType(DataType.Date)]
         public DateTime MeetingDate { get; set; }
-        public int Bishopric { get; set; }
-        public string OpeningPrayer { get; set; }
+
+        [StringLength(60, MinimumLength = 3)]
+        [Required]
+        public string Bishopric { get; set; }
+
+        [StringLength(60, MinimumLength = 3)]
+        [Required]
+        public string OpeningHymn { get; set; }
+
+        [StringLength(60, MinimumLength = 3)]
+        [Required]
+        public string OpeningPray { get; set; }
+
+        [StringLength(60, MinimumLength = 3)]
+        [Required]
+        public string SacramentHymn { get; set; }
+
+        [StringLength(60, MinimumLength = 3)]
+        [Required]
+        public string FirstSpeaker { get; set; }
+
+        [StringLength(60, MinimumLength = 3)]
+        [Required]
+        public string SecondSpeaker { get; set; }
+
+        [StringLength(60, MinimumLength = 3)]
+        [Required]
+        public string IntermediateHymn { get; set; }
+
+        [StringLength(60, MinimumLength = 3)]
+        [Required]
+        public string ThirdSpeaker { get; set; }
+
+        [StringLength(60, MinimumLength = 3)]
+        [Required]
+        public string FourthSpeaker { get; set; }
+
+        [StringLength(60, MinimumLength = 3)]
+        [Required]
+        public string ClosingHymn { get; set; }
+
+        [StringLength(60, MinimumLength = 3)]
+        [Required]
         public string ClosingPrayer { get; set; }
-        public int OpeningHymnId { get; set; }
-        public int SacramentHymnId { get; set; }
-        public int? IntermediateHymnId { get; set; }
-        public int ClosingHymnId { get; set; }
-        public ICollection<Speaker> Speakers { get; set; }
-        public Bishopric BishopricNavigation { get; set; }
-
-        public Hymn OpeningHymn { get; set; }
-        public Hymn SacramentHymn { get; set; }
-        public Hymn IntermediateHymn { get; set; }
-        public Hymn ClosingHymn { get; set; }
-
     }
 }

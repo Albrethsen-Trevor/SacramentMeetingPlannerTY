@@ -8,7 +8,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using SacramentMeetingPlannerTY.Models;
-using SacramentMeetingPlannerTY.Data;
 
 namespace SacramentMeetingPlannerTY
 {
@@ -26,7 +25,7 @@ namespace SacramentMeetingPlannerTY
         {
             services.AddMvc();
 
-            services.AddDbContext<SacramentMeetingPlannerContext>(options =>
+            services.AddDbContext<SacramentMeetingPlannerTYContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("SacramentMeetingPlannerTYContext")));
         }
 
@@ -54,7 +53,3 @@ namespace SacramentMeetingPlannerTY
         }
     }
 }
-
-/*
-    dotnet aspnet-codegenerator controller -name HymnController -m Hymns -dc SacramentMeetingPlannerContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
-*/
