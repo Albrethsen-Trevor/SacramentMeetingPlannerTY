@@ -21,7 +21,7 @@ namespace SacramentMeetingPlannerTY.Models
                 context.Meeting.AddRange(
                     new Meeting
                     {
-                        MeetingDate = DateTime.Parse("04-15-2018"),
+                        MeetingDate = DateTime.Parse("04-08-2018"),
                         Bishopric = "Bishop Smith",
                         OpeningHymn = "The Spirit of God",
                         OpeningPray = "John Smith",
@@ -37,7 +37,7 @@ namespace SacramentMeetingPlannerTY.Models
 
                     new Meeting
                     {
-                        MeetingDate = DateTime.Parse("04-22-2018"),
+                        MeetingDate = DateTime.Parse("04-15-2018"),
                         Bishopric = "Bishop Smith",
                         OpeningHymn = "We Thank Thee, O God, for a Prophet",
                         OpeningPray = "Jane Smith",

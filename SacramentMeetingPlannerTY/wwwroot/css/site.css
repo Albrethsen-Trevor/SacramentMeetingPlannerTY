@@ -1,6 +1,12 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    background-color: whitesmoke;
+}
+
+.navbar {
+    background-color: green;
 }
 
 /* Wrapping element */
